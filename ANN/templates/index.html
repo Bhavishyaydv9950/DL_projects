@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f8fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            max-width: 400px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>🚗 Predict Car Price</h2>
+        <form method="POST" action="/predict">
+            <label for="kms_driven">Kilometers Driven:</label>
+            <input type="number" name="kms_driven" id="kms_driven" step="any" required>
+
+            <label for="owner">Owner Count:</label>
+            <input type="number" name="owner" id="owner" min="0" required>
+
+            <label for="age">Age (in years):</label>
+            <input type="number" name="age" id="age" min="0" required>
+
+            <label for="power">Power (BHP):</label>
+            <input type="number" name="power" id="power" step="any" min="0" required>
+
+            <label for="brand">Brand:</label>
+            <select name="brand" id="brand" required>
+                <option value="" disabled selected>-- Select Brand --</option>
+                <option value="0">Maruti</option>
+                <option value="1">Hyundai</option>
+                <option value="2">Honda</option>
+                <option value="3">Toyota</option>
+                <option value="4">BMW</option>
+                <option value="5">Mercedes</option>
+                <!-- Add more brands as per your model's encoding -->
+            </select>
+
+            <input type="submit" value="Predict Price">
+        </form>
+    </div>
+</body>
+</html>
