@@ -1,3 +1,7 @@
-pandas 
-tensorflow
 numpy
+pandas
+scikit-learn
+tensorflow   # (agar Deep Learning / RNN, CNN use karna hai)
+torch        # (agar PyTorch use karoge)
+nltk
+flask        # (front-end ko backend se connect karne ke liye)
